@@ -36,26 +36,19 @@ export default function Home({ mainInfo }) {
                         transition={{ delay: 0.2, duration: 0.5 }}
                     >
                         <SectionContainer id="features" className="features">
-                            <BadgeGroup alignment="center">
+                            {/* <BadgeGroup alignment="center">
                                 <BadgeMessage>Features</BadgeMessage>
-                            </BadgeGroup>
+                            </BadgeGroup> */}
                             <PageTitle
                                 className="text-center mx-auto"
                                 type="default"
                             >
-                                Simplify Your Nutrition Journey with NutriTrack
+                                {mainInfo[0].sectionTwoTitle}
                             </PageTitle>
                             <Content className="text-center" alignment="center">
-                                <p>
-                                    Hey there! Welcome to NutriTrack, the
-                                    ultimate nutrition meal planner powered by
-                                    Notion. We&apos;ve got some awesome features
-                                    lined up to make your nutrition journey a
-                                    piece of cake (pun intended). Check them
-                                    out:
-                                </p>
+                                <p>{mainInfo[0].sectionTwoDescription}</p>
                             </Content>
-                            <ContentImage />
+                            <ContentImage sectionTwoInfo={mainInfo[0]} />
                         </SectionContainer>
                     </MotionBTTContainer>
                     {/* Card Container Tabs */}
@@ -63,10 +56,10 @@ export default function Home({ mainInfo }) {
                         transition={{ delay: 0.2, duration: 0.5 }}
                     >
                         <SectionContainer className="feature-tabs">
-                            <BadgeGroup alignment="center">
+                            {/* <BadgeGroup alignment="center">
                                 <BadgeMessage>More Features</BadgeMessage>
                                 <BadgeIcon icon="twemoji:waving-hand" />
-                            </BadgeGroup>
+                            </BadgeGroup> */}
                             <PageTitle
                                 className="text-center mx-auto"
                                 type="default"

@@ -3,26 +3,25 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { v4 as uuid } from "uuid";
 
-const ContentImageData = [
-    {
-        id: uuid(),
-        title: "Effortless Planning",
-        content:
-            "Say goodbye to meal planning stress! With NutriTrack, planning your meals becomes a breeze. Our user-friendly Notion template lets you create customized daily or weekly meal plans effortlessly. Enjoy a balanced and nutritious diet without the hassle.",
-        align: "right",
-        image: "/features1.png"
-    },
-    {
-        id: uuid(),
-        title: "Shopping List",
-        content:
-            "We've got your grocery shopping covered! NutriTrack includes a handy shopping list feature. As you plan your meals, the template automatically generates a comprehensive shopping list. No more forgotten items or aimless wandering in the supermarket. Shopping for healthy ingredients has never been easier!",
-        align: "left",
-        image: "/features2.png"
-    }
-];
+export const ContentImage = ({ sectionTwoInfo }) => {
+    console.log("sectionTwoInfo", sectionTwoInfo);
 
-export const ContentImage = () => {
+    const ContentImageData = [
+        {
+            id: uuid(),
+            title: sectionTwoInfo.sectionTwoPhotoOneTitle,
+            content: sectionTwoInfo.sectionTwoPhotoOneDescription,
+            align: "right",
+            image: sectionTwoInfo.sectionTwoPhotoOne.url
+        },
+        {
+            id: uuid(),
+            title: sectionTwoInfo.sectionTwoPhotoTwoTitle,
+            content: sectionTwoInfo.sectionTwoPhotoTwoDescription,
+            align: "left",
+            image: sectionTwoInfo.sectionTwoPhotoTwo.url
+        }
+    ];
     return (
         <SectionContainer className="process-items mt-16 space-y-16">
             {ContentImageData.map((item) => (
