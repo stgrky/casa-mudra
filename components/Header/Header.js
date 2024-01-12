@@ -31,7 +31,7 @@ export const Header = () => {
                     <ButtonGroup className="hidden md:block">
                         <a
                             role="button"
-                            href="https://github.com/christian-luntok/nutritrack"
+                            href="https://www.booking.com/hotel/mx/casa-mudra.html"
                             className="btn btn--secondary ml-4"
                         >
                             Book Today

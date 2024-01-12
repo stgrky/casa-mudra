@@ -9,42 +9,42 @@ const DATA = [
         title: "Template",
         items: [
             {
-                label: "Features",
-                href: "#features"
+                label: "Amenities",
+                href: "#amenities"
             },
             {
-                label: "Testimonials",
-                href: "#testimonials"
-            },
-            {
-                label: "FAQ",
-                href: "#faq"
+                label: "Reviews",
+                href: "#reviews"
             }
+            // {
+            //     label: "FAQ",
+            //     href: "#faq"
+            // }
         ]
     },
     {
         title: "Company",
         items: [
-            {
-                label: "About",
-                href: "https://github.com/christian-luntok/",
-                target: "_blank"
-            },
-            {
-                label: "Twitter",
-                href: "https://github.com/christian-luntok/",
-                target: "_blank"
-            },
+            // {
+            //     label: "About",
+            //     href: "https://github.com/christian-luntok/",
+            //     target: "_blank"
+            // },
+            // {
+            //     label: "Twitter",
+            //     href: "https://github.com/christian-luntok/",
+            //     target: "_blank"
+            // },
             {
                 label: "Instagram",
-                href: "https://github.com/christian-luntok/",
-                target: "_blank"
-            },
-            {
-                label: "Facebook",
-                href: "https://github.com/christian-luntok/",
+                href: "https://www.instagram.com/casamudragdl/",
                 target: "_blank"
             }
+            // {
+            //     label: "Facebook",
+            //     href: "https://github.com/christian-luntok/",
+            //     target: "_blank"
+            // }
         ]
     }
 ];
@@ -63,22 +63,21 @@ export const Footer = () => {
                             <div className="footer--logo grid gap-8">
                                 <Link href="/">
                                     <Image
-                                        src="/nutritrack.svg"
+                                        src="/casaMudraLogo.jpeg"
                                         alt="logo"
-                                        className="h-10 w-auto"
+                                        className="h-100 w-100"
                                         height="25"
                                         width="100"
                                         priority
                                     />
                                 </Link>
-                                {/* Get Template button; remove if not used */}
                                 <ButtonGroup alignment="left">
                                     <a
                                         role="button"
-                                        href="https://github.com/christian-luntok/nutritrack"
+                                        href="https://www.booking.com/hotel/mx/casa-mudra.html"
                                         className="btn btn--secondary"
                                     >
-                                        Get Template
+                                        Book Today
                                         <Icon icon="material-symbols:arrow-forward-rounded" />
                                     </a>
                                 </ButtonGroup>
