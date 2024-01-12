@@ -4,22 +4,21 @@ import Image from "next/image";
 import { v4 as uuid } from "uuid";
 
 export const ContentImage = ({ sectionTwoInfo }) => {
-    console.log("sectionTwoInfo", sectionTwoInfo);
 
     const ContentImageData = [
         {
             id: uuid(),
-            title: sectionTwoInfo.sectionTwoPhotoOneTitle,
-            content: sectionTwoInfo.sectionTwoPhotoOneDescription,
+            title: sectionTwoInfo.sectionTwoImageOneTitle,
+            content: sectionTwoInfo.sectionTwoImageOneDescription,
             align: "right",
-            image: sectionTwoInfo.sectionTwoPhotoOne.url
+            image: sectionTwoInfo.sectionTwoImageOne.url
         },
         {
             id: uuid(),
-            title: sectionTwoInfo.sectionTwoPhotoTwoTitle,
-            content: sectionTwoInfo.sectionTwoPhotoTwoDescription,
+            title: sectionTwoInfo.sectionTwoImageTwoTitle,
+            content: sectionTwoInfo.sectionTwoImageTwoDescription,
             align: "left",
-            image: sectionTwoInfo.sectionTwoPhotoTwo.url
+            image: sectionTwoInfo.sectionTwoImageTwo.url
         }
     ];
     return (
