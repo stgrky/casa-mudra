@@ -11,6 +11,18 @@ export const getMainInfo = async () => {
                 mainPhoto {
                     url
                 }
+                sectionTwoTitle
+                sectionTwoDescription
+                sectionTwoPhotoOneDescription
+                sectionTwoPhotoOneTitle
+                sectionTwoPhotoOne {
+                    url
+                }
+                sectionTwoPhotoTwoDescription
+                sectionTwoPhotoTwoTitle
+                sectionTwoPhotoTwo {
+                    url
+                }
             }
         }
     `;
