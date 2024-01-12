@@ -6,44 +6,39 @@ import { SectionContainer } from "@components/Section";
 import { PageTitle } from "@components/Title";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import { getMainInfo } from "../../utils/index.js"
 
 export const HomeBanner = ({ mainInfo }) => {
-    console.log("mainInfo", mainInfo);
+    console.log("mainInfo", mainInfo[0].mainPhoto.url);
     return (
         <SectionContainer className="page-banner--container py-16">
             <SectionContainer className="page-banner--inner-container wrap wrap-px z-10">
                 {/* Appear First */}
-                <MotionBTTContainer transition={{ delay: 0.2, duration: 0.5 }}>
+                {/* <MotionBTTContainer transition={{ delay: 0.2, duration: 0.5 }}>
                     <BadgeGroup alignment="center">
                         <BadgeMessage>Discover NutriTrack!</BadgeMessage>
                         <BadgeIcon icon="game-icons:meal" />
                     </BadgeGroup>
-                </MotionBTTContainer>
+                </MotionBTTContainer> */}
                 {/* Appear Second */}
-                <MotionBTTContainer transition={{ delay: 0.4, duration: 0.5 }}>
+                <MotionBTTContainer transition={{ delay: 0.5, duration: 0.5 }}>
                     <PageTitle className="text-center mx-auto" type="heavy">
-                        The effortless way to plan your meals with the power of
-                        Notion.
+                        {mainInfo[0].mainText}
                     </PageTitle>
                 </MotionBTTContainer>
                 {/* Appear Third */}
                 <MotionBTTContainer transition={{ delay: 0.6, duration: 0.5 }}>
                     <Content className="text-center" alignment="center">
-                        <p>
-                            Streamline your nutrition journey and achieve your
-                            health goals with ease.{" "}
-                        </p>
+                        <p>{mainInfo[0].mainTextDescription}</p>
                     </Content>
                     <div className="mt-6 mb-16 text-center">
                         <ButtonGroup alignment="center">
-                            <Button href="#features">Features</Button>
+                            <Button href="#features">Photo Gallery</Button>
                             <a
                                 role="button"
-                                href="https://github.com/christian-luntok/nutritrack"
+                                href="https://www.booking.com/hotel/mx/casa-mudra.html"
                                 className="btn btn--secondary"
                             >
-                                Get Template
+                                Book Now
                                 <Icon icon="material-symbols:arrow-forward-rounded" />
                             </a>
                         </ButtonGroup>
@@ -53,7 +48,7 @@ export const HomeBanner = ({ mainInfo }) => {
                 <MotionBTTContainer transition={{ delay: 0.8, duration: 0.5 }}>
                     <div className="page-banner--image">
                         <Image
-                            src="/nutritrack-hero-banner.png"
+                            src={mainInfo[0].mainPhoto.url}
                             width={1024}
                             height={680}
                             alt="Page Banner"
@@ -66,10 +61,3 @@ export const HomeBanner = ({ mainInfo }) => {
         </SectionContainer>
     );
 };
-
-export async function getStaticProps() {
-    const mainInfo = (await getMainInfo()) || [];
-    return {
-        props: { mainInfo }
-    };
-}

@@ -16,9 +16,9 @@ export const Header = () => {
                     <h1 className="logo mb-0">
                         <Link href="/">
                             <Image
-                                src="/nutritrack.svg"
+                                src="/casaMudraLogo.jpeg"
                                 alt="logo"
-                                className="h-6 w-auto"
+                                className=""
                                 height="24"
                                 width="100"
                                 priority
@@ -34,7 +34,7 @@ export const Header = () => {
                             href="https://github.com/christian-luntok/nutritrack"
                             className="btn btn--secondary ml-4"
                         >
-                            Get Template
+                            Book Today
                             <Icon icon="material-symbols:arrow-forward-rounded" />
                         </a>
                     </ButtonGroup>

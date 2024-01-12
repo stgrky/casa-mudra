@@ -16,8 +16,10 @@ import {
     CardImage,
     Card
 } from "@components/Card";
+import { getMainInfo } from "services";
 
-export default function Home() {
+export default function Home({ mainInfo }) {
+    console.log("mainInfo", mainInfo);
     return (
         <Layout className="">
             <SEO
@@ -26,7 +28,7 @@ export default function Home() {
             />
             <div className="main-wrapper bg-[#F3F5F8] relative z-10 pb-20 pt-20 ">
                 {/* { Page Banner } */}
-                <HomeBanner />
+                <HomeBanner mainInfo={mainInfo} />
                 {/* Components Container */}
                 <SectionContainer className="components--container wrap wrap-px grid gap-8 sm:gap-24">
                     {/* Features */}
@@ -170,4 +172,11 @@ export default function Home() {
             </div>
         </Layout>
     );
+}
+
+export async function getStaticProps() {
+    const mainInfo = (await getMainInfo()) || [];
+    return {
+        props: { mainInfo }
+    };
 }

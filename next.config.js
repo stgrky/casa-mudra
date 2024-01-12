@@ -14,7 +14,7 @@ const nextConfig = {
     },
     images: {
         formats: ["image/avif", "image/webp"],
-        domains: ["s.gravatar.com"]
+        domains: ["s.gravatar.com", "media.graphassets.com"]
     },
     env: {
         siteTitle: "Your Company",
