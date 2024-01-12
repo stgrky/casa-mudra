@@ -20,7 +20,6 @@ import { getMainInfo } from "services";
 import { getFaqInfo } from "services";
 
 export default function Home({ mainInfo, faqInfo }) {
-    console.log("faqInfo", faqInfo);
     return (
         <Layout className="">
             <SEO
@@ -106,17 +105,16 @@ export default function Home({ mainInfo, faqInfo }) {
                                             alt="Image Two Alt"
                                         />
                                         <CardHeader className="!text-black !text-2xl !font-bold">
-                                            Progress Tracking
+                                            {
+                                                mainInfo[0]
+                                                    .sectionThreeCardTwoTitle
+                                            }
                                         </CardHeader>
                                         <p>
-                                            Celebrate your wins and stay
-                                            motivated on your nutrition journey.
-                                            NutriTrack allows you to monitor
-                                            your progress with weight,
-                                            measurements, and other key metrics.
-                                            Track your improvements over time
-                                            and see the positive impact of your
-                                            healthy choices.
+                                            {
+                                                mainInfo[0]
+                                                    .sectionThreeCardTwoDescription
+                                            }
                                         </p>
                                     </CardBody>
                                 </Card>
