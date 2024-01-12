@@ -3,45 +3,68 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import clsx from "clsx";
+import { getFaqInfo } from "services";
 
-const accordionData = [
-    {
-        id: uuid(),
-        title: "What is Notion?",
-        isOpen: true,
-        content:
-            "Notion is an all-in-one productivity tool that allows you to create notes, databases, and collaborative workspaces, making it easy to organize and manage your tasks, projects, and ideas in one place."
-    },
-    {
-        id: uuid(),
-        title: "Who is this template for?",
-        isOpen: false,
-        content:
-            "This template is specifically designed for Notion creators who want to create a personalized landing page for their Notion workspace, showcasing their projects, services, or content in a visually appealing manner."
-    },
-    {
-        id: uuid(),
-        title: "Do I need to pay for this?",
-        isOpen: false,
-        content: "No, this is free."
-    },
-    {
-        id: uuid(),
-        title: "Where can I ask more questions about this template?",
-        isOpen: false,
-        content:
-            "If you have any further questions or need assistance regarding this template, please feel free to reach out to me on my website, or click the Contact within the navigation links."
-    }
-];
+// const accordionData = [
+//     {
+//         id: uuid(),
+//         title: faqInfo[0].faq1Title,
+//         isOpen: true,
+//         content: faqInfo[0].faq1Answer
+//     },
+//     {
+//         id: uuid(),
+//         title: faqInfo[0].faq2Title,
+//         isOpen: false,
+//         content: faqInfo[0].faq2Answer
+//     },
+//     {
+//         id: uuid(),
+//         title: faqInfo[0].faq3Title,
+//         isOpen: false,
+//         content: faqInfo[0].faq3Answer
+//     },
+//     {
+//         id: uuid(),
+//         title: faqInfo[0].faq4Title,
+//         isOpen: false
+//     }
+// ];
 
-const accordionItemType = {
-    top: "rounded-t-lg",
-    default: "border rounded-none border-t-0",
-    bottom: "border border-t-0 rounded-b-lg"
-};
-
-export const Accordion = () => {
+export const Accordion = ({ faqInfo }) => {
     const [activeAccordion, setActiveAccordion] = useState(null);
+
+    const accordionItemType = {
+        top: "rounded-t-lg",
+        default: "border rounded-none border-t-0",
+        bottom: "border border-t-0 rounded-b-lg"
+    };
+
+    const accordionData = [
+        {
+            id: uuid(),
+            title: faqInfo[0].faq1Title,
+            isOpen: true,
+            content: faqInfo[0].faq1Answer
+        },
+        {
+            id: uuid(),
+            title: faqInfo[0].faq2Title,
+            isOpen: false,
+            content: faqInfo[0].faq2Answer
+        },
+        {
+            id: uuid(),
+            title: faqInfo[0].faq3Title,
+            isOpen: false,
+            content: faqInfo[0].faq3Answer
+        },
+        {
+            id: uuid(),
+            title: faqInfo[0].faq4Title,
+            isOpen: false
+        }
+    ];
 
     const accordionClickHandle = (id) => {
         setActiveAccordion(id === activeAccordion ? null : id);
@@ -97,3 +120,10 @@ export const Accordion = () => {
         </SectionContainer>
     );
 };
+
+export async function getStaticProps() {
+    const faqInfo = (await getFaqInfo()) || [];
+    return {
+        props: { faqInfo }
+    };
+}

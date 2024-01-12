@@ -8,7 +8,6 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 
 export const HomeBanner = ({ mainInfo }) => {
-    console.log("mainInfo", mainInfo[0].mainPhoto.url);
     return (
         <SectionContainer className="page-banner--container py-16">
             <SectionContainer className="page-banner--inner-container wrap wrap-px z-10">
@@ -32,7 +31,7 @@ export const HomeBanner = ({ mainInfo }) => {
                     </Content>
                     <div className="mt-6 mb-16 text-center">
                         <ButtonGroup alignment="center">
-                            <Button href="#features">Photo Gallery</Button>
+                            <Button href="/gallery/">Photo Gallery</Button>
                             <a
                                 role="button"
                                 href="https://www.booking.com/hotel/mx/casa-mudra.html"
@@ -48,7 +47,7 @@ export const HomeBanner = ({ mainInfo }) => {
                 <MotionBTTContainer transition={{ delay: 0.8, duration: 0.5 }}>
                     <div className="page-banner--image">
                         <Image
-                            src={mainInfo[0].mainPhoto.url}
+                            src={mainInfo[0].mainImage.url}
                             width={1024}
                             height={680}
                             alt="Page Banner"

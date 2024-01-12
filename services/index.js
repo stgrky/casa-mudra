@@ -8,19 +8,32 @@ export const getMainInfo = async () => {
             homepages {
                 mainText
                 mainTextDescription
-                mainPhoto {
+                mainImage {
                     url
                 }
                 sectionTwoTitle
                 sectionTwoDescription
-                sectionTwoPhotoOneDescription
-                sectionTwoPhotoOneTitle
-                sectionTwoPhotoOne {
+                sectionTwoImageOne {
                     url
                 }
-                sectionTwoPhotoTwoDescription
-                sectionTwoPhotoTwoTitle
-                sectionTwoPhotoTwo {
+                sectionTwoImageOneTitle
+                sectionTwoImageOneDescription
+                sectionTwoImageTwo {
+                    url
+                }
+                sectionTwoImageTwoTitle
+                sectionTwoImageTwoDescription
+                sectionThreeTitle
+                sectionThreeDescription
+                sectionThreeCardOneImage {
+                    url
+                }
+                sectionThreeCardOneTitle
+                sectionThreeCardOneDescription
+
+                sectionThreeCardTwoTitle
+                sectionThreeCardTwoDescription
+                sectionThreeCardTwoImage {
                     url
                 }
             }
@@ -29,4 +42,24 @@ export const getMainInfo = async () => {
     const result = await request(graphqlAPI, query);
 
     return result.homepages;
+};
+
+export const getFaqInfo = async () => {
+    const query = gql`
+        query FaqInfo {
+            frequentlyAskedQuestions {
+                faq1Answer
+                faq1Title
+                faq2Answer
+                faq2Title
+                faq3Answer
+                faq3Title
+                faq4Answer
+                faq4Title
+            }
+        }
+    `;
+    const result = await request(graphqlAPI, query);
+
+    return result.frequentlyAskedQuestions;
 };

@@ -4,9 +4,10 @@ import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
 
 const navigation = [
-    { name: "Amenities", to: "#features", href: "/#features" },
-    { name: "Testimonials", to: "#testimonials", href: "/#testimonials" },
+    { name: "Amenities", to: "#amenities", href: "/#amenities" },
+    { name: "Reviews", to: "#reviews", href: "/#reviews" },
     { name: "Booking", to: "#faq", href: "/#faq" },
+    { name: "Gallery", to: "", href: "/gallery/" },
     {
         name: "Contact",
         href: "https://chrstnl.com/",
