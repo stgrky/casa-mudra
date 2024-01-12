@@ -6,8 +6,10 @@ import { SectionContainer } from "@components/Section";
 import { PageTitle } from "@components/Title";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import { getMainInfo } from "../../utils/index.js"
 
-export const HomeBanner = () => {
+export const HomeBanner = ({ mainInfo }) => {
+    console.log("mainInfo", mainInfo);
     return (
         <SectionContainer className="page-banner--container py-16">
             <SectionContainer className="page-banner--inner-container wrap wrap-px z-10">
@@ -64,3 +66,10 @@ export const HomeBanner = () => {
         </SectionContainer>
     );
 };
+
+export async function getStaticProps() {
+    const mainInfo = (await getMainInfo()) || [];
+    return {
+        props: { mainInfo }
+    };
+}
