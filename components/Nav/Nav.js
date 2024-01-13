@@ -10,7 +10,7 @@ const navigation = [
     { name: "Gallery", to: "", href: "/gallery/" },
     {
         name: "Contact",
-        href: "https://chrstnl.com/",
+        href: "",
         isArrow: true,
         target: "_blank"
     }
