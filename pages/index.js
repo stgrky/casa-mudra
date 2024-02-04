@@ -18,6 +18,29 @@ import {
 } from "@components/Card";
 import { getMainInfo } from "services";
 import { getFaqInfo } from "services";
+import { Carousel } from "@material-tailwind/react";
+
+export function CarouselDefault() {
+    return (
+        <Carousel className="rounded-xl">
+            <img
+                src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+                alt="image 1"
+                className="h-full w-full object-cover"
+            />
+            <img
+                src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+                alt="image 2"
+                className="h-full w-full object-cover"
+            />
+            <img
+                src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+                alt="image 3"
+                className="h-full w-full object-cover"
+            />
+        </Carousel>
+    );
+}
 
 export default function Home({ mainInfo, faqInfo }) {
     return (
@@ -32,25 +55,23 @@ export default function Home({ mainInfo, faqInfo }) {
                 {/* Components Container */}
                 <SectionContainer className="components--container wrap wrap-px grid gap-8 sm:gap-24">
                     {/* Features */}
-                    <MotionBTTContainer
-                        transition={{ delay: 0.2, duration: 0.5 }}
-                    >
-                        <SectionContainer id="amenities" className="features">
-                            {/* <BadgeGroup alignment="center">
-                                <BadgeMessage>Features</BadgeMessage>
-                            </BadgeGroup> */}
-                            <PageTitle
-                                className="text-center mx-auto"
-                                type="default"
-                            >
-                                {mainInfo[0].sectionTwoTitle}
-                            </PageTitle>
-                            <Content className="text-center" alignment="center">
-                                <p>{mainInfo[0].sectionTwoDescription}</p>
-                            </Content>
-                            <ContentImage sectionTwoInfo={mainInfo[0]} />
-                        </SectionContainer>
-                    </MotionBTTContainer>
+                    <Carousel className="rounded-xl">
+                        <img
+                            src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+                            alt="image 1"
+                            className="h-full w-full object-cover"
+                        />
+                        <img
+                            src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+                            alt="image 2"
+                            className="h-full w-full object-cover"
+                        />
+                        <img
+                            src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+                            alt="image 3"
+                            className="h-full w-full object-cover"
+                        />
+                    </Carousel>
                     {/* Card Container Tabs */}
                     <MotionBTTContainer
                         transition={{ delay: 0.2, duration: 0.5 }}
